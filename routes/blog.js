@@ -18,6 +18,7 @@ routes.get("/", (req, res) => {
       res.render("blog", { text: "best blog posts", posts: rows });
     }
   });
+  console.log(req.query.name)
 });
 
 // add new post
