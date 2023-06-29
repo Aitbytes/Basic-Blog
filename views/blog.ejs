@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>This is : <%= text %>
+  </h1>
+  <form action="/blog" method="post">
+    <label>Name : <input type="text" name="author" value="">
+    </label>
+    <label>
+      <p>Content :</p> <input style="display: inline; width: 40em; height: 20em;" type="text" name="content">
+    </label>
+    <button style="display: block;" type="submit">Submit</button>
+
+  </form>
+
+  <hr>
+  <% for ( i=0; i< posts.length; i++) {%>
+    <p>Author : <%=posts[i].author%>
+    </p>
+    <p>Date : <%= posts[i].date%>
+    </p>
+    <p>
+      <%=posts[i].content%>
+    </p>
+    <form action="/blog/delete/<%=i%>" method="post">
+      <button type="submit">Delete Post</button>
+
+    </form>
+    <hr>
+
+    <% } %>
+</body>
+
+</html>
