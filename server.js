@@ -4,7 +4,6 @@ const express = require("express")
 const app = express();
 const blogRoute = require("./routes/blog")
 
-
 app.use(express.urlencoded({ extended: true }))
 app.set("view engine", "ejs")
 app.use("/blog", blogRoute)
